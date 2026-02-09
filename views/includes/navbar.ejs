@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <div class="navbar">
+      <img src="/image/LOGO.png" alt="Logo" class="logo">
+    </div>
+   
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="navbar-nav">
+       <a class="nav-link" href="/listings/new">New Listing</a>
+      <% if(!currUser) {%>
+      <a class="nav-link "  href="/signup"><b>sign up</b></a>
+       <a class="nav-link "  href="/login"><b>login</b></a>
+       <% } %>
+       <% if(currUser){ %>
+        <a class="nav-link "  href="/logout"><b>logout</b></a>
+        <% } %>
+    </div>
+  </div>
+</nav>
