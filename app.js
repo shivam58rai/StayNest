@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 const path=require("path");
 const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
-const port=8080;
+const PORT = process.env.PORT || 8080;
 const ExpressError=require("./utils/ExpressError.js");
 const listingsRouter=require("./routes/listings.js");
 const reviewsRouter=require("./routes/reviews.js");
@@ -77,8 +77,9 @@ app.use((err, req, res, next) => {
   res.status(status).render("Error.ejs",{err});
 });
 
-app.listen(port, () => {
-  console.log(`Server is listening at ${port}`);
+
+app.listen(PORT, () => {
+  console.log(`Server is listening at ${PORT}`);
 });
 
 
